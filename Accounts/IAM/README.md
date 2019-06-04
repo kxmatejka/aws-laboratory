@@ -12,6 +12,8 @@ Identity & Access Management
 
 ## IAM JSON Policy Elements
 
+### Basic usage
+
 ```json
 {
   "Version": "2012-10-17",
@@ -34,4 +36,31 @@ Identity & Access Management
 - Resource
   - Specifies resource in arn format to which statement will affect
   - arn:aws:s3:::my_corporate_bucket/\*
-- see also: NotAction, NotResource, Condition
+- see also: NotAction, NotResource, [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)
+
+### Condition
+
+This condition allows to list files in `test-bucket/some-user`
+
+```json
+{
+  "Statement": [
+    {
+       "Action": ["s3:ListBucket"],
+       "Effect": "Allow",
+       "Resource": ["arn:aws:s3::test-bucket"],
+       "Condition": {
+         "StringLike": {
+           "s3:prefix": ["some-user/*"]
+         }
+       }
+    }
+  ]
+}
+```
+
+- IAM supports [several variables](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) 
+- For example a user name
+```
+"Condition": {"StringLike": {"s3:prefix": ["${aws:username}/*"]}}
+```
