@@ -4,6 +4,8 @@
 
 VPC enables you to launch AWS resources into a virtual network.
 
+![vpc overview](aws-vpc-overview.png)
+
 ### Features
 
 - private/public subnets
@@ -18,6 +20,8 @@ VPC enables you to launch AWS resources into a virtual network.
 ### Default VPC
 
 - created with account
+  - can be deleted and recreated
+  - allowed only one default vpc per account
 - all subnets have a route to the internet
 - each instance in default VPC (by default) has a private and public IP
 
@@ -27,3 +31,4 @@ VPC enables you to launch AWS resources into a virtual network.
 - 5 internet GW per region
 - 5 elastic IP
 - 50 VPN connections per region
+
