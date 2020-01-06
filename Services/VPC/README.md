@@ -32,3 +32,9 @@ VPC enables you to launch AWS resources into a virtual network.
 - 5 elastic IP
 - 50 VPN connections per region
 
+### Routing
+
+- VPC Router is highly available service
+- VPC Router using first address of ip range
+- VPC have main route table which is implicit to each subnet
+- Each subnet have just one route table
