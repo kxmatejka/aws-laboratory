@@ -38,3 +38,14 @@ VPC enables you to launch AWS resources into a virtual network.
 - VPC Router using first address of ip range
 - VPC have main route table which is implicit to each subnet
 - Each subnet have just one route table
+
+### Network ACL
+
+- Subnet can have only one associated NACL (but one NACL can be associated to many subnets)
+- NACL can control inbound and outbound traffic
+- By default the're allowing all inbound and outbound traffic
+- NACL is stateless. NACL don't know if traffic is initialized or a response to.
+- Rules are processed in ascending rule number.
+- It can be used as a quick anti-ddos tool.
+- NACL can't affect traffic between instances within same subnet
+- NACL can be configured only by a range of IP addresses.
