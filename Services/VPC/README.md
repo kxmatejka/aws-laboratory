@@ -49,3 +49,11 @@ VPC enables you to launch AWS resources into a virtual network.
 - It can be used as a quick anti-ddos tool.
 - NACL can't affect traffic between instances within same subnet
 - NACL can be configured only by a range of IP addresses.
+
+### Security groups
+
+- SG are applied to network interfaces
+- SG are statefull (inbound rule covers outbound traffic and conversely)
+- SG don't have order of evaluation
+- Any traffic which is not covered by any rule is implicitly denied
+- SG can reference to any other aws resource
